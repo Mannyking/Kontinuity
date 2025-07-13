@@ -29,11 +29,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.toyelabs.financelabs.theme.FinanceLabsTheme
 import com.toyelabs.financelabs.theme.dotoFontFamily
+import kotlinx.coroutines.delay
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-fun LaunchScreen() {
+fun LaunchScreen(onFinished: () -> Unit) {
     val visible = remember { mutableStateOf(false) }
+
     val alpha by animateFloatAsState(
         targetValue = if(visible.value) 1f else 0f,
         animationSpec = tween(durationMillis = 1200),
@@ -47,6 +49,8 @@ fun LaunchScreen() {
 
     LaunchedEffect(Unit) {
         visible.value = true
+        delay(1800)
+        onFinished()
     }
 
     Surface(
@@ -97,6 +101,6 @@ fun LaunchScreen() {
 @Composable
 fun LaunchScreenPreview() {
     FinanceLabsTheme(useDarkTheme = true) {
-        LaunchScreen()
+        LaunchScreen { }
     }
 }
