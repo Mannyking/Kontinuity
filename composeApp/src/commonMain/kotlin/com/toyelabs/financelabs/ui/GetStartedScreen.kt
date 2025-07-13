@@ -1,6 +1,7 @@
 package com.toyelabs.financelabs.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,7 +38,10 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-fun GetStartedScreen(onGetStarted: () -> Unit) {
+fun GetStartedScreen(
+    onGetStarted: () -> Unit,
+    onLoginClick: () -> Unit
+) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background,
@@ -136,7 +140,9 @@ fun GetStartedScreen(onGetStarted: () -> Unit) {
                         },
                         style = TextStyle(
                             fontWeight = FontWeight.ExtraLight
-                        )
+                        ),
+                        modifier = Modifier
+                            .clickable { onLoginClick() }
                     )
                 }
             }
@@ -148,6 +154,6 @@ fun GetStartedScreen(onGetStarted: () -> Unit) {
 @Composable
 fun GetStartedScreenPreview() {
     FinanceLabsTheme {
-        GetStartedScreen( onGetStarted = { TODO() })
+        GetStartedScreen( onGetStarted = { TODO() }, onLoginClick = { TODO() })
     }
 }
