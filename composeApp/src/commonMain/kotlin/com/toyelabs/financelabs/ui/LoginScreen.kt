@@ -1,5 +1,6 @@
 package com.toyelabs.financelabs.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -47,7 +48,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun LoginScreen(
-    onLoginClick: () -> Unit = { }
+    onLoginClick: () -> Unit = { },
+    onGetStartedClick: () -> Unit = { }
 ) {
     var walletId by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -171,7 +173,9 @@ fun LoginScreen(
                         style = MaterialTheme.typography.bodySmall.copy(
                             color = MaterialTheme.colorScheme.primary,
                         ),
-                        modifier = Modifier.padding(top = 8.dp),
+                        modifier = Modifier
+                            .padding(top = 8.dp)
+                            .clickable { onGetStartedClick() },
                     )
 
                     Spacer(modifier = Modifier.height(8.dp))
