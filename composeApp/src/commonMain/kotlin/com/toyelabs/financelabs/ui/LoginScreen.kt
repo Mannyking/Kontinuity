@@ -173,6 +173,8 @@ fun LoginScreen(
                         ),
                         modifier = Modifier.padding(top = 8.dp),
                     )
+
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
             }
         }
