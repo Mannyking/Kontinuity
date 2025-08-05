@@ -53,7 +53,7 @@ fun OnboardingScreen(
 ) {
     val topUpOptions = listOf("1 Week", "1 month", "2 months")
 
-    var phoneNumber by remember { mutableStateOf("") }
+    var bvn by remember { mutableStateOf("") }
     var selectedTopUp by remember { mutableStateOf(topUpOptions[0]) }
     var scrollState = rememberScrollState()
 
@@ -85,9 +85,9 @@ fun OnboardingScreen(
             Spacer(modifier = Modifier.height(4.dp))
 
             OutlinedTextField(
-                value = phoneNumber,
+                value = bvn,
                 onValueChange = { input ->
-                    phoneNumber = input.filter { it.isDigit() }.take(11)
+                    bvn = input.filter { it.isDigit() }.take(11)
                 },
                 label = { Text("BVN") },
                 modifier = Modifier.fillMaxWidth(),
