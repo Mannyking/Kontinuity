@@ -53,6 +53,7 @@ fun LoginScreen(
 ) {
     var walletId by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+
     val iconSize = 64.dp
     val name = "Mama"
 
@@ -95,14 +96,12 @@ fun LoginScreen(
                 elevation = CardDefaults.elevatedCardElevation(defaultElevation = 12.dp),
                 shape = RoundedCornerShape(size = 12.dp),
                 colors = CardDefaults.elevatedCardColors(
-                    containerColor = MaterialTheme.colorScheme.background.copy(alpha = 0.9f),
+                    containerColor = MaterialTheme.colorScheme.background.copy(alpha = 1f),
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
-                Column(
-                    modifier = Modifier.padding(all = 24.dp)
-                ) {
+                Column {
                     OutlinedTextField(
                         value = walletId,
                         onValueChange = { walletId = it },
@@ -125,10 +124,12 @@ fun LoginScreen(
                         singleLine = true,
                         shape = RoundedCornerShape(size = 12.dp),
                     )
+
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
             }
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(36.dp))
 
             Button(
                 onClick = onLoginClick,
