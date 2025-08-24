@@ -9,7 +9,8 @@ import com.toyelabs.financelabs.theme.FinanceLabsTheme
 import com.toyelabs.financelabs.ui.GetStartedScreen
 import com.toyelabs.financelabs.ui.LaunchScreen
 import com.toyelabs.financelabs.ui.LoginScreen
-import com.toyelabs.financelabs.ui.OnboardingScreen
+import com.toyelabs.financelabs.ui.onboarding.OnboardingScreen
+import com.toyelabs.financelabs.ui.onboarding.PreOnboardingScreen
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 sealed class Screen {
@@ -17,6 +18,7 @@ sealed class Screen {
     object GetStarted: Screen()
     object Login: Screen()
     object Onboarding: Screen()
+    object PreOnboarding: Screen()
 }
 
 @Composable
@@ -27,9 +29,10 @@ fun App() {
     FinanceLabsTheme {
         when (currentScreen) {
             Screen.Launch -> LaunchScreen { currentScreen = Screen.GetStarted }
-            Screen.GetStarted -> GetStartedScreen(onGetStarted = { currentScreen = Screen.Onboarding }, onLoginClick = { currentScreen = Screen.Login })
+            Screen.GetStarted -> GetStartedScreen(onGetStarted = { currentScreen = Screen.PreOnboarding }, onLoginClick = { currentScreen = Screen.Login })
             Screen.Login -> LoginScreen(onGetStartedClick = { currentScreen = Screen.Onboarding })
             Screen.Onboarding -> OnboardingScreen(onConfirmClick = { currentScreen = Screen.GetStarted })
+            Screen.PreOnboarding -> PreOnboardingScreen(onConfirmClick = { currentScreen = Screen.Onboarding })
         }
     }
 }

@@ -1,10 +1,7 @@
-package com.toyelabs.financelabs.ui
+package com.toyelabs.financelabs.ui.onboarding
 
-import android.graphics.drawable.Icon
 import androidx.compose.foundation.border
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -40,8 +37,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.toyelabs.financelabs.theme.Transparent
+import com.toyelabs.financelabs.ui.h
+import com.toyelabs.financelabs.ui.w
 import financelabs.composeapp.generated.resources.Res
-import financelabs.composeapp.generated.resources.baseline_account_balance_24
 import financelabs.composeapp.generated.resources.ic_stopwatch
 import financelabs.composeapp.generated.resources.twotone_aod_24
 import org.jetbrains.compose.resources.DrawableResource
@@ -96,7 +94,7 @@ fun OnboardingScreen(
                 shape = RoundedCornerShape(size = 12.dp),
             )
 
-            Spacer(modifier = Modifier.height(3.h))
+            Spacer(modifier = Modifier.Companion.height(3.h))
 
             Text(
                 text = "Top-up Schedule",
@@ -163,7 +161,7 @@ private fun AccountLinkingCard(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(modifier = Modifier.width(5.w))
+            Spacer(modifier = Modifier.Companion.width(5.w))
 
             Icon(
                 painter = painterResource(drawableResource),
