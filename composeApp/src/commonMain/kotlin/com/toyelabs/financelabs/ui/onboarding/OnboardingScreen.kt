@@ -33,6 +33,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -62,7 +63,7 @@ fun OnboardingScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp)
+                .padding(top = 24.dp, bottom = 44.dp, start = 24.dp, end = 24.dp)
                 .verticalScroll(scrollState),
         )  {
             Spacer(modifier = Modifier.height(32.dp))
@@ -70,7 +71,8 @@ fun OnboardingScreen(
             Text(
                 text = "Welcome",
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.offset(y = 6.dp)
+                modifier = Modifier.offset(y = 6.dp),
+                fontWeight = FontWeight.SemiBold
             )
 
             Spacer(modifier = Modifier.height(32.dp))
@@ -148,12 +150,12 @@ private fun AccountLinkingCard(
             .fillMaxWidth()
             .border(
                 width = 1.dp,
-                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f),
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
                 shape = RoundedCornerShape(size = 12.dp)
             ),
         elevation = CardDefaults.elevatedCardElevation(defaultElevation = 12.dp),
         colors = CardDefaults.elevatedCardColors(
-            containerColor = MaterialTheme.colorScheme.background.copy(alpha = 0.9f),
+            containerColor = MaterialTheme.colorScheme.background.copy(alpha = 1f),
         ),
     ) {
         Row(

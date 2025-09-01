@@ -43,7 +43,7 @@ fun App() {
                     onLoginClick = { navController.navigate("login") })
             }
             composable("login") {
-                LoginScreen(onGetStartedClick = { navController.navigate("onboarding") })
+                LoginScreen(onGetStartedClick = { navController.navigate("pre_onboarding") })
             }
             composable("onboarding") {
                 OnboardingScreen(onConfirmClick = { navController.navigate("get_started") })

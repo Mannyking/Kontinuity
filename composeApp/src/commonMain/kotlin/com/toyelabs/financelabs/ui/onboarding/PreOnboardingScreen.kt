@@ -43,8 +43,8 @@ fun PreOnboardingScreen(
 
     Surface(
         modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
     ) {
         Column(
             verticalArrangement = Arrangement.Center,

@@ -64,7 +64,7 @@ fun LoginScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp)
+                .padding(top = 24.dp, bottom = 64.dp, start = 24.dp, end = 24.dp)
         ) {
             Spacer(modifier = Modifier.height(180.dp))
 
@@ -101,7 +101,10 @@ fun LoginScreen(
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
-                Column {
+                Column(
+                    modifier = Modifier
+                        .padding(horizontal = 6.dp)
+                ) {
                     OutlinedTextField(
                         value = walletId,
                         onValueChange = { walletId = it },
@@ -151,7 +154,7 @@ fun LoginScreen(
                         .fillMaxSize()
                         .padding(bottom = 24.dp)
                 ) {
-                    when (getPlatform().name) {
+                    when ("android") {
                         "ios" -> {
                             Icon(
                                 painter = painterResource(Res.drawable.face_id),
