@@ -9,9 +9,12 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -33,13 +36,13 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import com.toyelabs.financelabs.getPlatform
 import com.toyelabs.financelabs.theme.BurntOrange500
 import com.toyelabs.financelabs.theme.FinanceLabsTheme
 import com.toyelabs.financelabs.theme.NavyBlue500
 import com.toyelabs.financelabs.theme.Orange500
 import com.toyelabs.financelabs.theme.Purple500
 import com.toyelabs.financelabs.theme.TurquoiseBlue500
+import com.toyelabs.financelabs.theme.White
 import financelabs.composeapp.generated.resources.Res
 import financelabs.composeapp.generated.resources.biometric
 import financelabs.composeapp.generated.resources.face_id
@@ -64,7 +67,9 @@ fun LoginScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 24.dp, bottom = 64.dp, start = 24.dp, end = 24.dp)
+                .imePadding()
+                .padding(top = 24.dp, bottom = 44.dp, start = 24.dp, end = 24.dp)
+                .verticalScroll(rememberScrollState())
         ) {
             Spacer(modifier = Modifier.height(180.dp))
 
@@ -143,6 +148,8 @@ fun LoginScreen(
                 Text("Login")
             }
 
+            Spacer(modifier = Modifier.height(128.dp))
+
             Box(
                 modifier = Modifier.fillMaxWidth(),
                 contentAlignment = Alignment.Center
@@ -196,12 +203,10 @@ fun RainbowText(
     style: TextStyle = MaterialTheme.typography.headlineSmall
 ) {
     val rainbowColors = listOf(
+        NavyBlue500,
         Orange500,
         BurntOrange500,
-        NavyBlue500,
-        TurquoiseBlue500,
-        Purple500,
-        Orange500
+        MaterialTheme.colorScheme.onBackground,
     )
 
     Text(
