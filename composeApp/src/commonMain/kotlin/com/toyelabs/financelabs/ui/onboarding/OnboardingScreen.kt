@@ -39,8 +39,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.toyelabs.financelabs.theme.Transparent
-import com.toyelabs.financelabs.ui.h
-import com.toyelabs.financelabs.ui.w
+import com.toyelabs.financelabs.ui.helpers.h
+import com.toyelabs.financelabs.ui.helpers.w
 import financelabs.composeapp.generated.resources.Res
 import financelabs.composeapp.generated.resources.ic_stopwatch
 import financelabs.composeapp.generated.resources.twotone_aod_24

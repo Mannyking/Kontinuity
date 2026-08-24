@@ -1,4 +1,4 @@
-package com.toyelabs.financelabs.ui
+package com.toyelabs.financelabs.ui.helpers
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalDensity

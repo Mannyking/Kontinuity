@@ -1,4 +1,4 @@
-package com.toyelabs.financelabs.ui
+package com.toyelabs.financelabs.ui.getstarted
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

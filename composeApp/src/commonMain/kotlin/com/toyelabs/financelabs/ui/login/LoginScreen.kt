@@ -1,4 +1,4 @@
-package com.toyelabs.financelabs.ui
+package com.toyelabs.financelabs.ui.login
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -40,9 +40,6 @@ import com.toyelabs.financelabs.theme.BurntOrange500
 import com.toyelabs.financelabs.theme.FinanceLabsTheme
 import com.toyelabs.financelabs.theme.NavyBlue500
 import com.toyelabs.financelabs.theme.Orange500
-import com.toyelabs.financelabs.theme.Purple500
-import com.toyelabs.financelabs.theme.TurquoiseBlue500
-import com.toyelabs.financelabs.theme.White
 import financelabs.composeapp.generated.resources.Res
 import financelabs.composeapp.generated.resources.biometric
 import financelabs.composeapp.generated.resources.face_id

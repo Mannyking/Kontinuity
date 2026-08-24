@@ -1,4 +1,4 @@
-package com.toyelabs.financelabs
+package com.toyelabs.financelabs.ui.helpers
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
